@@ -1,5 +1,8 @@
 <?php
 
+use Mitch\LaravelDoctrine\Cache;
+
+
 return [
     'simple_annotations' => false,
 
@@ -13,8 +16,17 @@ return [
         'namespace'     => null
     ],
 
-    // Available: null, apc, xcache, redis, memcache
+    // Uncomment the cache_provider you want to use in 'cache_providers' below,
+    // and then put its name here.
     'cache_provider' => null,
+
+    'cache_providers' => [
+//        new Cache\ApcProvider,
+//        new Cache\MemcacheProvider,
+//        new Cache\RedisProvider,
+//        new Cache\XcacheProvider,
+//        new Cache\NullProvider,
+    ],
 
     // A string that will act as a prefix for cached values' keys.
     // When left as `null`, this will be internally defaulted to:
